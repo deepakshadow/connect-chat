@@ -1,0 +1,95 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <h2>User Sign Up</h2>
+      <br>
+      <form (ngSubmit)="onSubmit()" [formGroup]="signUpForm" >
+        <div class="form-group">
+          <mat-form-field>
+            <input
+              type="text"
+              matInput
+              placeholder="Enter your first name"
+              formControlName="firstName"
+            />
+            <mat-error [hidden]="firstName.valid"
+              >first name required!</mat-error
+            >
+          </mat-form-field>
+        <!-- </div> -->
+        <!-- <div class="form-group"> -->
+          <mat-form-field>
+            <input
+              type="text"
+              matInput
+              placeholder="Enter your last name"
+              formControlName="lastName"
+            />
+            <mat-error [hidden]="lastName.valid">last name required</mat-error>
+          </mat-form-field>
+        <!-- </div>
+        <div class="form-group"> -->
+          <mat-form-field>
+            <input
+              type="number"
+              matInput
+              placeholder="Enter mobile number"
+              formControlName="mobileNumber"
+            />
+            <mat-error [hidden]="mobileNumber.valid"
+              >mobile number required</mat-error
+            >
+          </mat-form-field>
+        <!-- </div>
+        <div class="form-group"> -->
+          <mat-form-field>
+            <input
+              type="email"
+              matInput
+              placeholder="Enter email address"
+              formControlName="email"
+            />
+            <mat-error [hidden]="email.valid">email required</mat-error>
+          </mat-form-field>
+        <!-- </div>
+        <div class="form-group"> -->
+          <mat-form-field>
+            <input
+              type="password"
+              matInput
+              placeholder="Enter password"
+              formControlName="password"
+            />
+            <mat-error [hidden]="password.valid">password required</mat-error>
+          </mat-form-field>
+        <!-- </div>
+        <div class="form-group"> -->
+          <mat-form-field>
+            <input
+              type="text"
+              matInput
+              placeholder="Enter api key"
+              formControlName="apiKey"
+            />
+            <mat-error [hidden]="apiKey.valid">api key required</mat-error>
+          </mat-form-field>
+        </div>
+
+        <button
+          mat-raised-button
+          type="submit"
+          [disabled]="!signUpForm.valid"
+          color="primary"
+        >
+          Register
+        </button>
+        &nbsp;
+        <button type="button" mat-button (click)="goToLogin()" color="accent">
+          Login here
+        </button>
+      </form>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>

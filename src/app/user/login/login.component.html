@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <h2>User Login</h2>
+      <br />
+      <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+        <div class="form-group">
+          <mat-form-field>
+            <input
+              type="text"
+              matInput
+              placeholder="Enter email address"
+              formControlName="email"
+            />
+            <mat-error [hidden]="email.valid">Email required!</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              type="password"
+              matInput
+              placeholder="Enter password"
+              formControlName="password"
+            />
+            <mat-error [hidden]="password.valid">Password required!</mat-error>
+          </mat-form-field>
+        </div>
+        <button type="submit" [disabled]="loginForm.invalid" mat-raised-button color="primary">Login</button>
+        &nbsp;
+        <button type="button" (click)="goToSignUp()" mat-button color="accent">Register here</button>
+      </form>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>
